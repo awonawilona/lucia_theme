@@ -1,0 +1,284 @@
+/*
+Site Name: The Invisible Kitchen
+Owner: Miele
+Author: Pablo Rueda Moltó
+Resume: Adaptation to theme bones to jeet & Stylus  :)
+
+Global Import
+
+    * jeet
+    * Axis
+    * Rupture
+
+Styl Input:
+
+    * stylus/stylus.styl
+    * stylus/login.styl
+    * stylus/admin.styl
+    * stylus/editor-style.styl
+
+Css Output:
+
+    * css/stylus.css
+    * css/login.css
+    * css/admin.css
+    * css/editor-style.css
+*/
+/*
+    IMPORTING PARTIALS
+    These files are needed at the beginning so that we establish all
+    our mixins, functions, and variables that we'll be using across
+    the whole project.
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #222;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+@font-face {
+  font-family: "HelveticaNeueW01-UltLt";
+  src: url("//www.miele.com/media/common/fonts/41774233-b9da-44be-b252-6a7b612fb1c7.eot?iefix") format("eot");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-UltLt";
+  src: url("//www.miele.com/media/common/fonts/41774233-b9da-44be-b252-6a7b612fb1c7.eot?iefix");
+  src: url("//www.miele.com/media/common/fonts/4bff1fbb-b4bf-4d95-9c47-efcb14384e36.woff") format("woff"), url("//www.miele.com/media/common/fonts/7f1f2a7d-3837-4c93-b373-f03c5da3f9a1.ttf") format("truetype"), url("//www.miele.com/media/common/fonts/d9f2752a-8d82-4cf1-b82f-109c1105be7f.svg#d9f2752a-8d82-4cf1-b82f-109c1105be7f") format("svg");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-45Ligh";
+  src: url("//www.miele.com/media/common/fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?iefix") format("eot");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-45Ligh";
+  src: url("//www.miele.com/media/common/fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?iefix");
+  src: url("//www.miele.com/media/common/fonts/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff") format("woff"), url("//www.miele.com/media/common/fonts/688ab72b-4deb-4e15-a088-89166978d469.ttf") format("truetype"), url("//www.miele.com/media/common/fonts/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-55Roma";
+  src: url("//www.miele.com/media/common/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?iefix") format("eot");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-55Roma";
+  src: url("//www.miele.com/media/common/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?iefix");
+  src: url("//www.miele.com/media/common/fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"), url("//www.miele.com/media/common/fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"), url("//www.miele.com/media/common/fonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-65Medi";
+  src: url("//www.miele.com/media/common/fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?iefix") format("eot");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-65Medi";
+  src: url("//www.miele.com/media/common/fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?iefix");
+  src: url("//www.miele.com/media/common/fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff") format("woff"), url("//www.miele.com/media/common/fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf") format("truetype"), url("//www.miele.com/media/common/fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5") format("svg");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-75Bold";
+  src: url("//www.miele.com/media/common/fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?iefix") format("eot");
+}
+@font-face {
+  font-family: "HelveticaNeueW01-75Bold";
+  src: url("//www.miele.com/media/common/fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?iefix");
+  src: url("//www.miele.com/media/common/fonts/14ff6081-326d-4dae-b778-d7afa66166fc.woff") format("woff"), url("//www.miele.com/media/common/fonts/8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf") format("truetype"), url("//www.miele.com/media/common/fonts/f751c8ae-1057-46d9-8d74-62592e002568.svg#f751c8ae-1057-46d9-8d74-62592e002568") format("svg");
+}
+body {
+  background: #000;
+  color: #fff;
+  font-family: HelveticaNeueW01-45Ligh, Helvetica, Arial, sans-serif;
+}
+article,
+header,
+footer {
+  *zoom: 1;
+  width: auto;
+  max-width: 1180px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+article:before,
+header:before,
+footer:before,
+article:after,
+header:after,
+footer:after {
+  content: '';
+  display: table;
+}
+article:after,
+header:after,
+footer:after {
+  clear: both;
+}
+a,
+a:visited {
+  color: #e30613;
+  text-decoration: none;
+}
+a:hover,
+a:visited:hover {
+  font-family: HelveticaNeueW01-65Medi, Helvetica, Arial, sans-serif;
+}
+/*
+    PRINT STYLESHEET
+    Feel free to customize this. Remember to add things that won't make
+    sense to print at the bottom. Things like nav, ads, and forms should
+    be set to display none.
+*/
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    text-shadow: none !important;
+    -webkit-filter: none !important;
+            filter: none !important;
+    -ms-filter: none !important;
+  }
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:after,
+  a:visited:after {
+    content: " (" attr(href) ")";
+  }
+  a abbr[title]:after,
+  a:visited abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none;
+  }
+}
+/*
+    THEME STYLES
+
+    Come on! Go to styling...
+    To keep the independence of this file we only call main.stly
+*/

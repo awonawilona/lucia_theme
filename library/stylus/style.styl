@@ -1,0 +1,67 @@
+/*
+Site Name: The Invisible Kitchen
+Owner: Miele
+Author: Pablo Rueda Moltó
+Resume: Adaptation to theme bones to jeet & Stylus  :)
+
+Global Import
+
+    * jeet
+    * Axis
+    * Rupture
+
+Styl Input:
+
+    * stylus/stylus.styl
+    * stylus/login.styl
+    * stylus/admin.styl
+    * stylus/editor-style.styl
+
+Css Output:
+
+    * css/stylus.css
+    * css/login.css
+    * css/admin.css
+    * css/editor-style.css
+*/
+
+@import "jeet"
+@import "rupture"
+@import "axis"
+
+// edit()
+
+/*
+    IMPORTING PARTIALS
+    These files are needed at the beginning so that we establish all
+    our mixins, functions, and variables that we'll be using across
+    the whole project.
+*/
+
+global-reset()
+
+@import "base/typography"
+@import "base/functions"
+@import "base/mixins"
+@import "base/variables"
+@import "base/animations"
+@import "base/base"
+
+/*
+    PRINT STYLESHEET
+    Feel free to customize this. Remember to add things that won't make
+    sense to print at the bottom. Things like nav, ads, and forms should
+    be set to display none.
+*/
+
+@media print { @import "base/print" }
+
+/*
+    THEME STYLES
+
+    Come on! Go to styling...
+    To keep the independence of this file we only call main.stly
+*/
+
+// @import "base/main"
+// @import "view/main"
