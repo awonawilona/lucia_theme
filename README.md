@@ -27,6 +27,6 @@ Designed by Eddie Machado http://themble.com/bones
 
  $ make install
 
-## run stylis
+## Run Stylus
 
  $ make watch
