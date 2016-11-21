@@ -1,32 +1,51 @@
-# Threepress Starter Theme
+# Miele: The Best Cases
 
-- Author: Pablo Rueda Molto
-- Author URI: http://www.threepress.es
+Miele Best Cases: This tool spread the Marketing knowledge along Miele Company. 
 
-## Based in the bones starter theme (http://themble.com/bones/)
+This is a Theme Tools that running in a standard Wordpress Platform
 
-A Lightweight Wordpress Development Theme
+## Base on:
 
-Bones is designed to make the life of developers easier. It's built using HTML5 & has a strong semantic foundation. It's constantly growing so be sure to check back often if you are a frequent user. I'm always open to contribution. :)
+  - Wordpress
+  - Stylus
+  - jeet.gs
+  - Bones Start Theme : https://github.com/eddiemachado/bones
 
-Designed by Eddie Machado http://themble.com/bones
+## Concept
 
-## Adaptation:
+  - Home
+    * Header
+    * Bubble tags
+    * Last Projects
+    * Last Finding
+  - Projects Page
+    - Filter
+    - Project Tiles
+  - Project Details Page
+    * Header
+    * Topics
+    * Outline
+    * Findings list
+  - Findigs Page
+    - Filter
+    - Finding Tiles
+  - Finging Page
+    - Header
+    - Topics
+    - Campaign Outline
+    - Findings
+    - Actions to be taken
 
-- Stylus instead to Sass (http://stylus-lang.com/)
-- Axis: http://axis.netlify.com/
-- Rupture: https://jenius.github.io/rupture/
-- Autoprefixer: https://github.com/jenius/autoprefixer-stylus
-- Framework: jeet.gs
-- Metabox: https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
-- folder /cpt
-- Colors (via http://clrs.cc - slightly modded)
-- Template Main -> Section -> Article
+## Responsible
 
-## Install (https://www.npmjs.com/)
+  - Design: Sarah Schulz
+  - Concept: Daniel Somfleth
+  - Development: Pablo Rueda Moltó
 
- $ make install
+## Technical Requirements
 
-## Run Stylus
+  - PHP 5.6 or greater
+  - MySQL 5.6 or greater
+  - The mod_rewrite Apache module
 
- $ make watch
+### Please, feel free to add any comments
