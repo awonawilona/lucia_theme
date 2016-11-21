@@ -13,7 +13,7 @@
 						?>
 
 						<div class="no-widgets">
-							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'mieletheme' );  ?></p>
+							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bestcasestheme' );  ?></p>
 						</div>
 
 					<?php endif; ?>

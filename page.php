@@ -8,9 +8,6 @@
 
 					<section id="post-<?php the_ID(); ?>" role="section" itemscope itemtype="http://schema.org/BlogPosting">
 
-						<header class="section-header">
-							<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-						</header> <?php // end section header ?>
 
 						<article class="entry-content" itemprop="sectionBody">
 							<?php
@@ -30,7 +27,7 @@
 								 *
 								*/
 								wp_link_pages( array(
-									'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'mieletheme' ) . '</span>',
+									'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bestcasestheme' ) . '</span>',
 									'after'       => '</div>',
 									'link_before' => '<span>',
 									'link_after'  => '</span>',

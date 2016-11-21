@@ -8,11 +8,9 @@ just edit things like thumbnail sizes, header images,
 sidebars, comments, etc.
 */
 
-// LOAD BONES & CORE (if you remove this, the theme will break)
+// LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
-
-// LOAD THE INVISIBLE KITCHEN FUNTIONS (if you remove this, the theme will break)
-require_once( 'library/tik.php' );
+require_once( 'library/bestcases.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
@@ -28,7 +26,7 @@ function bones_ahoy() {
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'mieletheme', get_template_directory() . '/library/translation' );
+  load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/cpt/custom-post-type.php' );
@@ -118,14 +116,14 @@ new image size.
 
 /************* THEME CUSTOMIZE *********************/
 
-/*
+/* 
   A good tutorial for creating your own Sections, Controls and Settings:
   http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
-
+  
   Good articles on modifying the default options:
   http://natko.com/changing-default-wordpress-theme-customization-api-sections/
   http://code.tutsplus.com/tutorials/digging-into-the-theme-customizer-components--wp-27162
-
+  
   To do:
   - Create a js for the postmessage transport method
   - Create some sanitize functions to sanitize inputs
@@ -135,17 +133,17 @@ new image size.
 function bones_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
-  // Uncomment the below lines to remove the default customize sections
+  // Uncomment the below lines to remove the default customize sections 
 
-  $wp_customize->remove_section('title_tagline');
-  $wp_customize->remove_section('colors');
-  $wp_customize->remove_section('background_image');
-  $wp_customize->remove_section('static_front_page');
-  $wp_customize->remove_section('nav');
+  // $wp_customize->remove_section('title_tagline');
+  // $wp_customize->remove_section('colors');
+  // $wp_customize->remove_section('background_image');
+  // $wp_customize->remove_section('static_front_page');
+  // $wp_customize->remove_section('nav');
 
   // Uncomment the below lines to remove the default controls
   // $wp_customize->remove_control('blogdescription');
-
+  
   // Uncomment the following to change the default section titles
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
@@ -159,8 +157,8 @@ add_action( 'customize_register', 'bones_theme_customizer' );
 function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'mieletheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'mieletheme' ),
+		'name' => __( 'Sidebar 1', 'bonestheme' ),
+		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -177,8 +175,8 @@ function bones_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'mieletheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'mieletheme' ),
+		'name' => __( 'Sidebar 2', 'bonestheme' ),
+		'description' => __( 'The second (secondary) sidebar.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -215,13 +213,13 @@ function bones_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'mieletheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'mieletheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'mieletheme' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'bonestheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'bonestheme' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'bonestheme' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'mieletheme' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'bonestheme' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">
@@ -241,10 +239,10 @@ external fonts. If you're using Google Fonts, you
 can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
-function bones_fonts() {
-  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
-}
+// function bones_fonts() {
+//   wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+// }
 
-add_action('wp_enqueue_scripts', 'bones_fonts');
+// add_action('wp_enqueue_scripts', 'bones_fonts');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

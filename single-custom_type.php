@@ -29,7 +29,7 @@
 
 									<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
 									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'mieletheme' ), get_the_time( 'Y-m-j' ), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_term_list( $post->ID, 'custom_cat', ' ', ', ', '' ) );
+										printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bestcasestheme' ), get_the_time( 'Y-m-j' ), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_term_list( $post->ID, 'custom_cat', ' ', ', ', '' ) );
 									?></p>
 
 								</header>
@@ -52,7 +52,7 @@
 										 *
 										*/
 										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'mieletheme' ) . '</span>',
+											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bestcasestheme' ) . '</span>',
 											'after'       => '</div>',
 											'link_before' => '<span>',
 											'link_after'  => '</span>',
@@ -61,7 +61,7 @@
 								</article> <!-- end section section -->
 
 								<footer class="section-footer">
-									<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Custom Tags:', 'mieletheme' ) . '</span> ', ', ' ) ?></p>
+									<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Custom Tags:', 'bestcasestheme' ) . '</span> ', ', ' ) ?></p>
 
 								</footer>
 
@@ -75,13 +75,13 @@
 
 									<section id="post-not-found" class="hentry cf">
 										<header class="section-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'mieletheme' ); ?></h1>
+											<h1><?php _e( 'Oops, Post Not Found!', 'bestcasestheme' ); ?></h1>
 										</header>
 										<article class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'mieletheme' ); ?></p>
+											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bestcasestheme' ); ?></p>
 										</article>
 										<footer class="section-footer">
-											<p><?php _e( 'This is the error message in the single-custom_type.php template.', 'mieletheme' ); ?></p>
+											<p><?php _e( 'This is the error message in the single-custom_type.php template.', 'bestcasestheme' ); ?></p>
 										</footer>
 									</section>
 

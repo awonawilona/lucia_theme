@@ -8,21 +8,34 @@
 
 						<header class="section-header">
 
-							<h1 class="page-title" itemprop="headline"><?php _e( 'Epic 404 - Article Not Found', 'mieletheme' ); ?></h1>
+							<h1 class="page-title" itemprop="headline"><?php _e( 'Ooooooooops!', 'bestcasestheme' ); ?></h1>
+							<h3 class="page-subtitle"><?php _e( 'It’s not what you are looking for?<br/>Try again!', 'bestcasestheme' ); ?></h3>
 
 						</header> <?php // end section header ?>
 
 						<article class="entry-content" itemprop="sectionBody">
-
-							<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'mieletheme' ); ?></p>
+							<p>Error Page: 404</p>
+							<p>Here are some helpful links instead:</p>
+							<div class="nav-main-404">
+		    				<nav role="navigation">
+		    					<?php wp_nav_menu(array(
+				          'container' => false,                           // remove nav container
+				          'container_class' => '',                        // class of container (should you choose to use it)
+				          'menu' => __( 'The Main Menu', 'bestcasestheme' ),  // nav name
+				          'menu_class' => '',                             // adding custom nav class
+				          'theme_location' => 'main-nav',                 // where it's located in the theme
+				          'before' => '',                                 // before the menu
+				          'after' => '',                                  // after the menu
+				          'link_before' => '',                            // before each link
+				          'link_after' => '',                             // after each link
+				          'depth' => 0,                                   // limit the depth of the nav
+				          'fallback_cb' => '',                             // fallback function (if there is one)
+				          )); ?>
+		    				</nav>
+		          </div>
 
 						</article> <?php // end .entry-content ?>
 
-						<article class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-						</article>
 
 						<footer class="section-footer">
 
@@ -39,3 +52,4 @@
 			</main>
 
 <?php get_footer(); ?>
+

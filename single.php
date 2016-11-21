@@ -1,50 +1,62 @@
 <?php get_header(); ?>
 
-			<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+            <main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-				<div class="container">
+                <div class="container">
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <header class="header-category">
+                <div class="header-category__container">
+                  <h1><?php echo get_the_title();  ?></h1>
+                </div>
+              </header>
 
-						<?php
-							/*
-							 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
-							 *
-							 * So this function will bring in the needed template file depending on what the post
-							 * format is. The different post formats are located in the post-formats folder.
-							 *
-							 *
-							 * REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "fosrmat.php" FOR POSTS THAT AREN'T
-							 * A SPECIFIC POST FORMAT.
-							 *
-							 * If you want to remove post formats, just delete the post-formats folder and
-							 * replace the function below with the contents of the "format.php" file.
-							*/
-							get_template_part( 'post-formats/format', get_post_format() );
-						?>
+                    <section id="post-<?php the_ID(); ?>" role="section">
 
-					<?php endwhile; ?>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<?php else : ?>
+                        <?php $categories = get_the_category(); ?>
 
-						<section id="post-not-found" class="hentry cf">
-								<header class="section-header">
-									<h1><?php _e( 'Oops, Post Not Found!', 'mieletheme' ); ?></h1>
-								</header>
-								<article class="entry-content">
-									<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'mieletheme' ); ?></p>
-								</article>
-								<footer class="section-footer">
-										<p><?php _e( 'This is the error message in the single.php template.', 'mieletheme' ); ?></p>
-								</footer>
-						</section>
+                        <?php if (in_category( 'news' ) or in_category( 'news-it' )) { ?>
+                        <div class="news-meta">
+                            <div class="news-meta-left"><a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>" class="link_to_category"><?php _e('Back to','bestcasestheme'); ?> <?php echo $categories[0]->name; ?></a></div>
+                            <div class="news-meta-right"><p class="entry-time"><time class="updated entry-time" datetime="<?php echo get_the_time('Y-m-d'); ?>" itemprop="datePublished"><?php echo get_the_time(get_option('date_format')); ?></time></p></div>
+                        </div>
+                        <?php } else { ?>
+                        <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>" class="link_to_category"><?php echo $categories[0]->name; ?></a>
+                        <?php } ?>
 
-					<?php endif; ?>
+                        <?php the_content(); ?>
 
-					<?php //get_sidebar(); ?>
+                    <?php endwhile; ?>
 
-				</div>
+                    <?php else : ?>
 
-			</main>
+                    </section>
+
+                    <section id="post-not-found" class="hentry cf">
+                            <header class="section-header">
+                                <h1><?php _e( 'Oops, Post Not Found!', 'bestcasestheme' ); ?></h1>
+                            </header>
+                            <article class="entry-content">
+                                <p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bestcasestheme' ); ?></p>
+                            </article>
+                            <footer class="section-footer">
+                                    <p><?php _e( 'This is the error message in the single.php template.', 'bestcasestheme' ); ?></p>
+                            </footer>
+                    </section>
+
+                    <?php endif; ?>
+
+                    <footer class="article-footer">
+
+                        <?php // get_socialmedia_btns(); ?>
+
+                    </footer>
+
+                    <?php //get_sidebar(); ?>
+
+                </div>
+
+            </main>
 
 <?php get_footer(); ?>

@@ -1,74 +1,69 @@
-<?php get_header(); ?>
+c<?php get_header(); ?>
 
-			<div id="content">
+	<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-				<div id="inner-content">
+		<div id="content">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+			<header class="header-category">
+        <?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+      </header>
 
-							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-							?>
+			<section id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="section">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<header class="entry-header section-header">
 
-							<section id="post-<?php the_ID(); ?>" role="section">
+					<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+					<p class="byline entry-meta vcard">
+						<?php printf( __( 'Posted', 'bestcasestheme' ).' %1$s %2$s',
+          							     /* the time the post was published */
+          							     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+               								/* the author of the post */
+               								'<span class="by">'.__('by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+            							); ?>
+					</p>
 
-								<header class="entry-header section-header">
+				</header>
 
-									<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard">
-										<?php printf( __( 'Posted', 'mieletheme' ).' %1$s %2$s',
-                  							     /* the time the post was published */
-                  							     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__('by', 'mieletheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
+				<article class="entry-content cf">
 
-								</header>
+					<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
 
-								<article class="entry-content">
+					<?php the_excerpt(); ?>
 
-									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+				</article>
 
-									<?php the_excerpt(); ?>
+				<footer class="section-footer">
 
-								</article>
+				</footer>
 
-								<footer class="section-footer">
+			</section>
 
-								</footer>
+			<?php endwhile; ?>
 
-							</section>
+					<?php bones_page_navi(); ?>
 
-							<?php endwhile; ?>
+			<?php else : ?>
 
-									<?php bones_page_navi(); ?>
+					<section id="post-not-found" class="hentry cf">
+						<header class="section-header">
+							<h1><?php _e( 'Oops, Post Not Found!', 'bestcasestheme' ); ?></h1>
+						</header>
+						<article class="entry-content">
+							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bestcasestheme' ); ?></p>
+						</article>
+						<footer class="section-footer">
+								<p><?php _e( 'This is the error message in the archive.php template.', 'bestcasestheme' ); ?></p>
+						</footer>
+					</section>
 
-							<?php else : ?>
+			<?php endif; ?>
 
-									<section id="post-not-found">
-										<header class="section-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'mieletheme' ); ?></h1>
-										</header>
-										<article class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'mieletheme' ); ?></p>
-										</article>
-										<footer class="section-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'mieletheme' ); ?></p>
-										</footer>
-									</section>
 
-							<?php endif; ?>
+		</div>
 
-						</main>
-
-					<?php // get_sidebar(); ?>
-
-				</div>
-
-			</div>
+	</main>
 
 <?php get_footer(); ?>

@@ -18,7 +18,7 @@
 
 				<div class="container">
 
-						<h1 class="archive-title h2"><span><?php _e( 'Posts Categorized:', 'mieletheme' ); ?></span> <?php single_cat_title(); ?></h1>
+						<h1 class="archive-title h2"><span><?php _e( 'Posts Categorized:', 'bestcasestheme' ); ?></span> <?php single_cat_title(); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -28,13 +28,13 @@
 
 								<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 								<p class="byline vcard"><?php
-									printf(__('Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'mieletheme'), get_the_time('Y-m-j'), get_the_time(__('F jS, Y', 'mieletheme')), bones_get_the_author_posts_link(), get_the_term_list( get_the_ID(), 'custom_cat', "", ", ", "" ));
+									printf(__('Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bestcasestheme'), get_the_time('Y-m-j'), get_the_time(__('F jS, Y', 'bestcasestheme')), bones_get_the_author_posts_link(), get_the_term_list( get_the_ID(), 'custom_cat', "", ", ", "" ));
 								?></p>
 
 							</header>
 
 							<section class="entry-content">
-								<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'mieletheme' ) . '</span>' ); ?>
+								<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'bestcasestheme' ) . '</span>' ); ?>
 
 							</section>
 
@@ -52,13 +52,13 @@
 
 								<article id="post-not-found" class="hentry cf">
 									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'mieletheme' ); ?></h1>
+										<h1><?php _e( 'Oops, Post Not Found!', 'bestcasestheme' ); ?></h1>
 									</header>
 									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'mieletheme' ); ?></p>
+										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bestcasestheme' ); ?></p>
 									</section>
 									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the taxonomy-custom_cat.php template.', 'mieletheme' ); ?></p>
+											<p><?php _e( 'This is the error message in the taxonomy-custom_cat.php template.', 'bestcasestheme' ); ?></p>
 									</footer>
 								</article>
 

@@ -4,7 +4,7 @@
 
         <div class="container">
 
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'mieletheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bestcasestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -15,7 +15,7 @@
 									<h3 class="search-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
                   						<p class="byline entry-meta vcard">
-                    							<?php printf( __( 'Posted %1$s by %2$s', 'mieletheme' ),
+                    							<?php printf( __( 'Posted %1$s by %2$s', 'bestcasestheme' ),
                    							    /* the time the post was published */
                    							    '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
                       							    /* the author of the post */
@@ -27,17 +27,17 @@
 
 								<article class="entry-content">
 
-										<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'mieletheme' ) . '</span>' ); ?>
+										<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'bestcasestheme' ) . '</span>' ); ?>
 
 								</article>
 
 								<footer class="section-footer">
 
 									<?php if(get_the_category_list(', ') != ''): ?>
-                  					<?php printf( __( 'Filed under: %1$s', 'mieletheme' ), get_the_category_list(', ') ); ?>
+                  					<?php printf( __( 'Filed under: %1$s', 'bestcasestheme' ), get_the_category_list(', ') ); ?>
                   					<?php endif; ?>
 
-                 					<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'mieletheme' ) . '</span> ', ', ', '</p>' ); ?>
+                 					<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bestcasestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
 								</footer> <!-- end section footer -->
 
@@ -51,13 +51,13 @@
 
 									<section id="post-not-found" class="hentry cf">
 										<header class="section-header">
-											<h1><?php _e( 'Sorry, No Results.', 'mieletheme' ); ?></h1>
+											<h1><?php _e( 'Sorry, No Results.', 'bestcasestheme' ); ?></h1>
 										</header>
 										<article class="entry-content">
-											<p><?php _e( 'Try your search again.', 'mieletheme' ); ?></p>
+											<p><?php _e( 'Try your search again.', 'bestcasestheme' ); ?></p>
 										</article>
 										<footer class="section-footer">
-												<p><?php _e( 'This is the error message in the search.php template.', 'mieletheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the search.php template.', 'bestcasestheme' ); ?></p>
 										</footer>
 									</section>
 
