@@ -1,0 +1,95 @@
+/*
+* Author: Pablo Rueda
+* Theme: Lucia Theme 
+* Version: 2.1
+*/
+
+// ---------------
+// Axis Settings
+// Check here for updates:
+// https://github.com/jenius/axis/blob/master/axis/settings.styl
+// ---------------
+
+// Container
+
+.container 
+  center(960px)
+  +tablet()
+    center(960px)
+  +tablet(orientation: portrait)
+    center(720px)
+  +below(420px)
+    center(328px)
+    
+// Font stacks (add your own!)
+
+// $td-navy        = #3D58BD
+// $td-green       = #70E9D8
+// $td-green-acc   = #3EEDEF 
+// $td-black       = #02063A 
+// $td-bone        = #F7F4F4
+// $td-red         = #FF1547
+// $td-yellow      = #FF1547
+// $td-blue        = #2AB2E1
+
+
+// $bmw-font   = BMW,"Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif
+// //- $sans-reg = 'MINISansReg'//, Arial, sans-serif
+// //- $sans-bold = 'MINISansBold'//, Arial, sans-serif
+// //- $serif-reg = 'MINISansReg'//, Arial, sans-serif
+// //- $serif-bold = 'MINISansBold'//, Arial, sans-serif
+
+// Client Colors
+
+// Colors (via http://clrs.cc - slightly modded)
+
+$navy     = #001F3F
+$blue     = #008BD0
+$aqua     = #7FDBFF
+$teal     = #39CCCC
+$olive    = #3D9970
+$green    = #41A62B
+$lime     = #01FF70
+$yellow   = #FFDC00
+$orange   = #FF851B
+$red      = #FF4136
+$maroon   = #85144B
+$fuchsia  = #E2007A
+$purple   = #B10DC9
+$white    = #FFFFFF
+$silver   = #DDDDDD
+$gray     = #001f3f
+$black    = #000000
+
+// Use as default HTML colors
+navy    = $navy
+blue    = $blue
+aqua    = $aqua
+teal    = $teal
+olive   = $olive
+green   = $green
+lime    = $lime
+yellow  = $yellow
+orange  = $orange
+red     = $red
+maroon  = $maroon
+fuchsia = $fuchsia
+purple  = $purple
+white   = $white
+silver  = $silver
+gray    = $gray
+black   = $black
+
+
+// Custom image base path for axis mixins
+$img-path = '../images/'
+
+// Ligatures
+$ligatures = false
+
+//- Font
+webfont(BMW, BMWGroup-Regular, true, normal, normal)
+webfont(BMW, BMWGroup-Bold, true, bold, normal)
+
+// rupture.mobile-cutoff = 600px
+// rupture.desktop-cutoff = 1200px

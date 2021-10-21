@@ -1,14 +1,15 @@
 {
-  "name": "the-invisible-kitchen",
-  "version": "0.0.1",
+  "name": "lucia-theme",
+  "version": "2.1.0",
   "dependencies": {
-    "autoprefixer-stylus": "0.8.x",
-    "axis": "0.5.x",
-    "jeet": "^6.1.2",
-    "rupture": "0.6.x",
-    "stylus": "0.52.x"
+    "autoprefixer-stylus": "^0.14.0",
+    "axis": "1.0.x",
+    "coffeescript": "2.5.x",
+    "jeet": "7.2.0",
+    "rupture": "0.7.x",
+    "stylus": "0.54.x"
   },
-  "description": "Miele: the invisible kitchen",
+  "description": "Lucia Theme",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
@@ -16,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:td-berlin/miele_the-invisible-kitchen.git"
+    "url": "https://github.com/awonawilona/lucia_theme"
   },
   "author": "Pablo Rueda Motló",
   "license": "ISC"
