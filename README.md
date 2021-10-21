@@ -25,6 +25,7 @@
 
 ### HTLM Structure
 
+```HTML
 <main>
   <header id="main-header">
     ...
@@ -51,7 +52,7 @@
     ...
   </footer>
 </main>
-
+```
 
 ### Wordpresss hierrarchy: 
 
