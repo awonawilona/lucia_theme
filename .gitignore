@@ -16,6 +16,12 @@ Thumbs.db
 *.codekit3
 .idea
 
+
+# ignore npm files
+package.json
+package-lock.json
+Makefile
+
 # ignore log files and databases
 *.log
 *.sql
